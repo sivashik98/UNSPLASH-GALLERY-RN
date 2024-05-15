@@ -1,4 +1,4 @@
-**UNSPLASH GALLERY iOS/Android app**
+# UNSPLASH GALLERY iOS/Android app
 
 Чтобы протестировать приложение на android перейдите по ссылке на облако mail в котором лежит **APK** файл который можно скачать и установить
 ссылка - https://cloud.mail.ru/public/MN8N/VnqvD53LG
