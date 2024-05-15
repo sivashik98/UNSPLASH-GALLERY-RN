@@ -10,15 +10,13 @@ import {UIText} from "../../../components/UIText";
 import {PressToDownscale} from "../../../components/PressToDownscale";
 import {Like} from "../../../components/Like";
 
-export const Poster = memo(({poster}) => {
+export const Poster = memo(({poster = {}}) => {
     const {navigate} = useNavigation()
     const rendered = useSharedValue(false)
     const {likes = 0, urls = {}, user = {}, alt_description = '', id} = poster
     const {full, raw, regular} = urls
     const [likesCount, setLikesCount] = useState(likes)
     const author = `${user.first_name || ''} ${user.last_name || ''}`
-
-    // console.log(id)
 
     useEffect(() => {
         rendered.value = true

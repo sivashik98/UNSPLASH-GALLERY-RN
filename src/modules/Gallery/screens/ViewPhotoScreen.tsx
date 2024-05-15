@@ -1,56 +1,17 @@
-import _ from 'lodash/fp';
-import React, {useEffect, useState, useCallback} from "react";
-import {StyleSheet, FlatList} from "react-native";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
-import {RefreshControl} from 'react-native-gesture-handler';
+import React from "react";
+import {StyleSheet} from "react-native";
+import {Image} from "expo-image";
+import {useRoute} from "@react-navigation/native";
+import LottieView from "lottie-react-native";
 
 import {UIView} from "../../../components/UIView";
-
-import {useGetPhotoByIdQuery, useGetPhotosQuery} from "../../../api/api";
-import {UIText} from "../../../components/UIText";
-import {useNavigation, useRoute} from "@react-navigation/native";
-import {Image} from "expo-image";
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from "../../../constants";
-import {ListFooterLoader} from "../components/ListFooterLoader";
-import LottieView from "lottie-react-native";
 import {BackButton} from "../../../components/BackButton";
 
-
-
-// const PostsSkeleton = () => {
-//     return (
-//         <UIView flex>
-//         <UIView br50 marginV-20 marginH-20 padding-20 backgroundColor={'#efefef'}>
-//         <UIView br50 height={200} backgroundColor={'#fff'} />
-//     <UIView marginT-15 br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginT-15 row>
-//     <UIView flex br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginL-40 flex br50 height={20} backgroundColor={'#fff'} />
-//     </UIView>
-//     </UIView>
-//     <UIView br50 marginV-20 marginH-20 padding-20 backgroundColor={'#efefef'}>
-//         <UIView br50 height={200} backgroundColor={'#fff'} />
-//     <UIView marginT-15 br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginT-15 row>
-//     <UIView flex br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginL-40 flex br50 height={20} backgroundColor={'#fff'} />
-//     </UIView>
-//     </UIView>
-//     <UIView br50 marginV-20 marginH-20 padding-20 backgroundColor={'#efefef'}>
-//         <UIView br50 height={200} backgroundColor={'#fff'} />
-//     <UIView marginT-15 br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginT-15 row>
-//     <UIView flex br50 height={20} backgroundColor={'#fff'} />
-//     <UIView marginL-40 flex br50 height={20} backgroundColor={'#fff'} />
-//     </UIView>
-//     </UIView>
-//     </UIView>
-// );
-// };
+import {useGetPhotoByIdQuery} from "../../../api/api";
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from "../../../constants";
 
 export const ViewPhotoScreen = ({}) => {
     const {id = ''} = useRoute()?.params
-    const {top} = useSafeAreaInsets()
     const {data, isLoading, isFetching, isSuccess, isError, error, refetch} = useGetPhotoByIdQuery({id})
     const {urls = ''} = data || {}
     const source = require('../../../../assets/lottie/loader.json')
@@ -99,14 +60,4 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH,
         height: SCREEN_HEIGHT
     },
-    // contentContainer: {
-    //     position: 'absolute',
-    //     bottom: 0,
-    //     left: 0,
-    //     right: 0,
-    //     borderTopLeftRadius: 10,
-    //     borderTopRightRadius: 10,
-    //     backgroundColor: 'rgba(255,255,255,0.8)',
-    //     padding: 20
-    // }
 });

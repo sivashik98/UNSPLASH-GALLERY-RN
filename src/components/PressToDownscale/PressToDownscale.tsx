@@ -1,10 +1,8 @@
 import React, {FC} from "react";
 import {Gesture, GestureDetector} from 'react-native-gesture-handler';
+import {useAnimatedStyle, useSharedValue, withTiming} from "react-native-reanimated";
 
 import {UIView} from "../UIView";
-
-import {Easing, runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming} from "react-native-reanimated";
-
 
 export const PressToDownscale: FC<{}> = ({children}) => {
     const pressed = useSharedValue(false);

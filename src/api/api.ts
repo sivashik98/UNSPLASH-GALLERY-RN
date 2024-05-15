@@ -22,10 +22,8 @@ export const api = createApi({
     })
 })
 
-export const {useGetPhotosQuery, useGetPhotoByIdQuery} = api
-
 export type Photo = {
-    // "asset_type": "photo",};
+
 }
 
 type PhotoParams = {
@@ -34,5 +32,7 @@ type PhotoParams = {
     per_page: number,
     page: number
 }
+
+export const {useGetPhotosQuery, useGetPhotoByIdQuery} = api
 
 

@@ -24,8 +24,10 @@ const renderItem = ({item, index}) => {
 }
 
 const PostsSkeleton = () => {
+    const {top} = useSafeAreaInsets()
+
     return (
-        <UIView flex>
+        <UIView flex backgroundColor={'#fff'} style={{paddingTop: top}}>
             <UIView br50 marginV-20 marginH-20 padding-20 backgroundColor={'#efefef'}>
                 <UIView br50 height={200} backgroundColor={'#fff'} />
                 <UIView marginT-15 br50 height={20} backgroundColor={'#fff'} />

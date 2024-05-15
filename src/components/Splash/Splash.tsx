@@ -1,11 +1,9 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useRef} from "react";
+import {runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming} from "react-native-reanimated";
+import LottieView from "lottie-react-native";
+import {StyleSheet} from "react-native";
 
 import {UIView} from "../UIView";
-import LottieView from "lottie-react-native";
-import {useEffect, useRef} from "react";
-import {StyleSheet} from "react-native";
-import {Easing, runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming} from "react-native-reanimated";
-
 
 export const Splash: FC<{}> = ({setIsReady}) => {
     const loaded = useSharedValue(false)

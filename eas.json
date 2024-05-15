@@ -1,13 +1,13 @@
 {
   "build": {
-    "development-simulator": {
+    "development": {
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
         "simulator": true
       }
     },
-    "prod-test": {
+    "production": {
       "distribution": "internal",
       "android": {
         "developmentClient": true,
